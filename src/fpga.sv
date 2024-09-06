@@ -195,7 +195,7 @@ module emilian_cell
           f_out = in1;
         2:
           // half of LUT2
-          f_out = left_q[0] ? {1'b0, mux[left_q[1]]} : {1'b1, left_q[1]};
+          f_out = left_q[0] ? {mux[left_q[1]], 1'b0} : {left_q[1], 1'b1};
         3: 
           // mix mux - one bit from left and one bit from down.
           f_out = {left_q[mux[0]], down_q[mux[1]]};
