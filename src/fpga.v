@@ -1,5 +1,5 @@
 `default_nettype none
-module emilian_muxpga (
+module tt_um_emilian_muxpga (
 	ui_in,
 	uo_out,
 	uio_in,
@@ -79,7 +79,7 @@ module emilian_muxpga (
 					reg [1:0] cell_in1;
 					wire [2:1] sv2v_tmp_inmux1_q;
 					always @(*) cell_in1 = sv2v_tmp_inmux1_q;
-					diferential_mux_in #(
+					emilian_mux_in #(
 						.B(CELL_BITS),
 						.ROWS(ROWS),
 						.COLS(COLS),
@@ -91,7 +91,7 @@ module emilian_muxpga (
 						.q(sv2v_tmp_inmux1_q)
 					);
 					localparam odd = col % 2;
-					diferential_cell #(
+					emilian_cell #(
 						.B(CELL_BITS),
 						.odd(odd)
 					) c(
@@ -110,7 +110,7 @@ module emilian_muxpga (
 		end
 	endgenerate
 endmodule
-module diferential_mux_in (
+module emilian_mux_in (
 	sel,
 	cell_q,
 	q
@@ -150,7 +150,7 @@ module diferential_mux_in (
 		end
 	endgenerate
 endmodule
-module diferential_cell (
+module emilian_cell (
 	clk,
 	reset,
 	en,

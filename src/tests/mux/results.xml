@@ -1,6 +1,0 @@
-<testsuites name="results">
-  <testsuite name="all" package="all">
-    <property name="random_seed" value="1682346956" />
-    <testcase name="test_cfg0_isdff" classname="test" file="/home/emilian/work/tt03/muxpga/src/tests/mux/test.py" lineno="112" time="0.03604698181152344" sim_time_ns="830000.001" ratio_time="23025506.13917604" />
-  </testsuite>
-</testsuites>
